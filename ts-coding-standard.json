@@ -1,8 +1,8 @@
 {
   "title": "TypeScript Coding Standard",
-  "rule-sets": {
-    "importing": {
-      "alignment": [
+  "standards": {
+    "import": {
+      "rules": [
         "Preserve side-effect imports (e.g., `import 'reflect-metadata';`)",
         "Side-effect imports must appear at the very top of the file, before any other imports.",
         "Group dynamic imports (e.g., `import('module')`) at the top of the file after side-effect imports and before static imports, if they import external modules.",
