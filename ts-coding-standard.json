@@ -1,7 +1,8 @@
 {
   "title": "TypeScript Coding Standard",
-  "parts": {
-    "import": {
+  "rule-categories": [
+    {
+      "name": "import alignment",
       "rules": [
         "Preserve side-effect imports (e.g., `import 'reflect-metadata';`).",
         "Side-effect imports must appear at the very top of the file, before any other imports.",
@@ -31,7 +32,8 @@
         "Preserve multi-symbol external imports in one line unless line length exceeds 120 characters.",
         "Scoped packages are considered external unless they match alias or relative paths explicitly.",
         "Preserve all import statements even if they appear outside the typical top-of-file location.",
-        "Preserve the exact original formatting and spacing of the file outside of import blocks. Only modify the import blocks when applying alignment rules. Do not add or remove blank lines or whitespace outside of imports."
+        "Preserve the exact original formatting and spacing of the file outside of import blocks. Only modify the import blocks when applying alignment rules. Do not add or remove blank lines or whitespace outside of imports.",
+        "Preserve multi-line import statements as atomic units. If an import spans multiple lines (including lines ending in commas or containing only imported symbols), treat the entire block as a single import during sorting and grouping. Do not split, reorder, or misplace parts of the import block. Ensure all lines associated with a multi-line import stay together."
       ],
       "sort priority": [
         "express",
@@ -40,5 +42,5 @@
         "class-validator"
       ]
     }
-  }
+  ]
 }
