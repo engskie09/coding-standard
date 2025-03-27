@@ -3,9 +3,10 @@
   "parts": {
     "import": {
       "rules": [
-        "Preserve side-effect imports (e.g., `import 'reflect-metadata';`)",
+        "Preserve side-effect imports (e.g., `import 'reflect-metadata';`).",
         "Side-effect imports must appear at the very top of the file, before any other imports.",
-        "Group dynamic imports (e.g., `import('module')`) at the top of the file after side-effect imports and before static imports, if they import external modules.",
+        "Group `import('module')` expressions (not declarations) at the top of the file after side-effect imports and before static imports, if they import external modules.",
+        "Declaration-style dynamic imports (e.g., `const foo = import('bar')...`) must appear after all static import statements. They must follow this strict order at the top of the file: 1. Side-effect imports \u2192 2. import() expressions \u2192 3. static imports \u2192 4. declaration-style dynamic imports \u2192 5. runtime code.",
         "Preserve original spacing and formatting outside import blocks. Do not remove blank lines or reformat code unrelated to imports.",
         "Group all external imports together (e.g., 'express', 'cors') and sort them alphabetically by module name.",
         "Add a single blank line after the external imports block.",
