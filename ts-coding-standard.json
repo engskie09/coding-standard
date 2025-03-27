@@ -1,40 +1,42 @@
 {
   "title": "TypeScript Coding Standard",
   "rule-sets": {
-    "import alignment": [
-      "Preserve side-effect imports (e.g., `import 'reflect-metadata';`)",
-      "Side-effect imports must appear at the very top of the file, before any other imports.",
-      "Group dynamic imports (e.g., `import('module')`) at the top of the file after side-effect imports and before static imports, if they import external modules.",
-      "Preserve original spacing and formatting outside import blocks. Do not remove blank lines or reformat code unrelated to imports.",
-      "Group all external imports together (e.g., 'express', 'cors') and sort them alphabetically by module name.",
-      "Add a single blank line after the external imports block.",
-      "Group internal (aliased @/) imports by their alias root directory (e.g., '@/router', '@/util', '@/service', '@/model').",
-      "Add a single blank line between each alias root group \u2014 even if they share similar base paths.",
-      "Within each alias root group, sort imports alphabetically by full path.",
-      "Do not insert blank lines *within* a single alias root group.",
-      "Place relative imports (e.g., './', '../') last and sort them alphabetically by path.",
-      "Add a single blank line before the relative import block, if it exists.",
-      "For local (aliased or relative) imports, align them based on how the symbols are exported in the source file.",
-      "Split 'import type' and regular 'import' statements according to exported members in the source.",
-      "'import type' must come before 'import' for the same source file.",
-      "Within each import statement, sort imported members inside { } alphabetically and remove any unnecessary commas.",
-      "Combine type and non-type imports from the same module into separate statements only if required by their export structure.",
-      "Preserve multi-line imports when necessary and avoid splitting them unnecessarily.",
-      "Keep all imports regardless of usage.",
-      "Treat JSON imports with 'assert { type: \"json\" }' as external if the path is not aliased (e.g., '@/') or relative (e.g., './', '../').",
-      "Sort external imports using the priority order defined under 'external import sort priority'. Modules listed earlier in the list must appear before others. Any modules not listed are sorted alphabetically after prioritized ones.",
-      "Treat scoped external packages (e.g., '@azure/storage-blob') as external imports.",
-      "Preserve all scoped imports (e.g., '@azure/*') and ensure they're grouped under external imports.",
-      "Do not remove any import statements regardless of whether the symbols are used or not.",
-      "Preserve multi-symbol external imports in one line unless line length exceeds 120 characters.",
-      "Scoped packages are considered external unless they match alias or relative paths explicitly.",
-      "Preserve all import statements even if they appear outside the typical top-of-file location."
-    ],
-    "external import sort priority": [
-      "express",
-      "mongoose",
-      "class-transformer",
-      "class-validator"
-    ]
+    "importing": {
+      "alignment": [
+        "Preserve side-effect imports (e.g., `import 'reflect-metadata';`)",
+        "Side-effect imports must appear at the very top of the file, before any other imports.",
+        "Group dynamic imports (e.g., `import('module')`) at the top of the file after side-effect imports and before static imports, if they import external modules.",
+        "Preserve original spacing and formatting outside import blocks. Do not remove blank lines or reformat code unrelated to imports.",
+        "Group all external imports together (e.g., 'express', 'cors') and sort them alphabetically by module name.",
+        "Add a single blank line after the external imports block.",
+        "Group internal (aliased @/) imports by their alias root directory (e.g., '@/router', '@/util', '@/service', '@/model').",
+        "Add a single blank line between each alias root group \u2014 even if they share similar base paths.",
+        "Within each alias root group, sort imports alphabetically by full path.",
+        "Do not insert blank lines *within* a single alias root group.",
+        "Place relative imports (e.g., './', '../') last and sort them alphabetically by path.",
+        "Add a single blank line before the relative import block, if it exists.",
+        "For local (aliased or relative) imports, align them based on how the symbols are exported in the source file.",
+        "Split 'import type' and regular 'import' statements according to exported members in the source.",
+        "'import type' must come before 'import' for the same source file.",
+        "Within each import statement, sort imported members inside { } alphabetically and remove any unnecessary commas.",
+        "Combine type and non-type imports from the same module into separate statements only if required by their export structure.",
+        "Preserve multi-line imports when necessary and avoid splitting them unnecessarily.",
+        "Keep all imports regardless of usage.",
+        "Treat JSON imports with 'assert { type: \"json\" }' as external if the path is not aliased (e.g., '@/') or relative (e.g., './', '../').",
+        "Sort external imports using the priority order defined under 'sort priority'. Modules listed earlier in the list must appear before others. Any modules not listed are sorted alphabetically after prioritized ones.",
+        "Treat scoped external packages (e.g., '@azure/storage-blob') as external imports.",
+        "Preserve all scoped imports (e.g., '@azure/*') and ensure they're grouped under external imports.",
+        "Do not remove any import statements regardless of whether the symbols are used or not.",
+        "Preserve multi-symbol external imports in one line unless line length exceeds 120 characters.",
+        "Scoped packages are considered external unless they match alias or relative paths explicitly.",
+        "Preserve all import statements even if they appear outside the typical top-of-file location."
+      ],
+      "sort priority": [
+        "express",
+        "mongoose",
+        "class-transformer",
+        "class-validator"
+      ]
+    }
   }
 }
