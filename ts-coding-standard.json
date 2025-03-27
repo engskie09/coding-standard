@@ -1,6 +1,6 @@
 {
   "title": "TypeScript Coding Standard",
-  "standards": {
+  "parts": {
     "import": {
       "rules": [
         "Preserve side-effect imports (e.g., `import 'reflect-metadata';`)",
@@ -29,7 +29,8 @@
         "Do not remove any import statements regardless of whether the symbols are used or not.",
         "Preserve multi-symbol external imports in one line unless line length exceeds 120 characters.",
         "Scoped packages are considered external unless they match alias or relative paths explicitly.",
-        "Preserve all import statements even if they appear outside the typical top-of-file location."
+        "Preserve all import statements even if they appear outside the typical top-of-file location.",
+        "Preserve the exact original formatting and spacing of the file outside of import blocks. Only modify the import blocks when applying alignment rules. Do not add or remove blank lines or whitespace outside of imports."
       ],
       "sort priority": [
         "express",
