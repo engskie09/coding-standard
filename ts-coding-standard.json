@@ -22,7 +22,7 @@
       "Preserve multi-line imports when necessary and avoid splitting them unnecessarily.",
       "Keep all imports regardless of usage.",
       "Treat JSON imports with 'assert { type: \"json\" }' as external if the path is not aliased (e.g., '@/') or relative (e.g., './', '../').",
-      "Sort external imports based on the defined dependency hierarchy listed under 'external dependency hierarchy import priority'. Modules listed earlier in the hierarchy must appear before later ones. If not listed, sort them alphabetically after prioritized modules.",
+      "Sort external imports using the priority order defined under 'external import sort priority'. Modules listed earlier in the list must appear before others. Any modules not listed are sorted alphabetically after prioritized ones.",
       "Treat scoped external packages (e.g., '@azure/storage-blob') as external imports.",
       "Preserve all scoped imports (e.g., '@azure/*') and ensure they're grouped under external imports.",
       "Do not remove any import statements regardless of whether the symbols are used or not.",
@@ -30,7 +30,7 @@
       "Scoped packages are considered external unless they match alias or relative paths explicitly.",
       "Preserve all import statements even if they appear outside the typical top-of-file location."
     ],
-    "external dependency hierarchy import priority": [
+    "external import sort priority": [
       "express",
       "mongoose",
       "class-transformer",
