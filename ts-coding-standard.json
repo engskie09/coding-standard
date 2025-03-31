@@ -2,46 +2,30 @@
   "title": "TypeScript Coding Standard",
   "rule-categories": [
     {
-      "name": "import alignment",
+      "name": "import alignment - these rules are for import part of codebase only for each .ts files",
       "rules": [
-        "Preserve side-effect imports (e.g., `import 'reflect-metadata';`).",
-        "Side-effect imports must appear at the very top of the file, before any other imports.",
-        "Group `import('module')` expressions (not declarations) at the top of the file after side-effect imports and before static imports, if they import external modules.",
-        "Declaration-style dynamic imports (e.g., `const foo = import('bar')...`) must appear after all static import statements. They must follow this strict order at the top of the file: 1. Side-effect imports \u2192 2. import() expressions \u2192 3. static imports \u2192 4. declaration-style dynamic imports \u2192 5. runtime code.",
-        "Preserve original spacing and formatting outside import blocks. Do not remove blank lines or reformat code unrelated to imports.",
-        "Group all external imports together (e.g., 'express', 'cors') and sort them alphabetically by module name.",
-        "Add a single blank line after the external imports block.",
-        "Group internal (aliased @/) imports by their alias root directory (e.g., '@/router', '@/util', '@/service', '@/model').",
-        "Add a single blank line between each alias root group \u2014 even if they share similar base paths.",
-        "Within each alias root group, sort imports alphabetically by full path.",
-        "Do not insert blank lines *within* a single alias root group.",
-        "Place relative imports (e.g., './', '../') last and sort them alphabetically by path.",
-        "Add a single blank line before the relative import block, if it exists.",
-        "For local (aliased or relative) imports, align them based on how the symbols are exported in the source file.",
-        "Split 'import type' and regular 'import' statements according to exported members in the source.",
-        "'import type' must come before 'import' for the same source file.",
-        "Within each import statement, sort imported members inside { } alphabetically and remove any unnecessary commas.",
-        "Combine type and non-type imports from the same module into separate statements only if required by their export structure.",
-        "Preserve multi-line imports when necessary and avoid splitting them unnecessarily.",
         "Keep all imports regardless of usage.",
-        "Treat JSON imports with 'assert { type: \"json\" }' as external if the path is not aliased (e.g., '@/') or relative (e.g., './', '../').",
-        "Sort external imports using the priority order defined under 'sort priority'. Modules listed earlier in the list must appear before others. Any modules not listed are sorted alphabetically after prioritized ones.",
-        "Treat scoped external packages (e.g., '@azure/storage-blob') as external imports.",
-        "Preserve all scoped imports (e.g., '@azure/*') and ensure they're grouped under external imports.",
-        "Do not remove any import statements regardless of whether the symbols are used or not.",
-        "Preserve multi-symbol external imports in one line unless line length exceeds 120 characters.",
-        "Scoped packages are considered external unless they match alias or relative paths explicitly.",
-        "Preserve all import statements even if they appear outside the typical top-of-file location.",
-        "Preserve the exact original formatting and spacing of the file outside of import blocks. Only modify the import blocks when applying alignment rules. Do not add or remove blank lines or whitespace outside of imports.",
-        "Preserve multi-line import statements as atomic units. If an import spans multiple lines (including lines ending in commas or containing only imported symbols), treat the entire block as a single import during sorting and grouping. Do not split, reorder, or misplace parts of the import block. Ensure all lines associated with a multi-line import stay together.",
-        "Preserve blank lines and spacing between grouped imports. Do not remove blank lines that separate different alias root groups (e.g., '@/model', '@/util') or other logical import blocks (e.g., side-effect \u2192 static \u2192 dynamic). If the original file includes blank lines between imports, treat them as meaningful and preserve them during sorting or realignment. When adding blank lines between import groups (as per alignment rules), ensure these are preserved and not stripped in future passes. Do not collapse all imports into a single block or strip out visual structure between groups.",
-        "Strictly preserve all original spacing and formatting outside import blocks. Do not trim or reflow blank lines, comments, or code unrelated to imports. When replacing import blocks, operate only within the import region at the top of the file. Do not re-indent, remove, or modify content beyond the identified import section. Ensure that all lines following the import section remain byte-for-byte identical to the original file."
+        "Sort external imports using the priority order defined under 'dependency sort priority'. Modules listed earlier in the list must appear before others. Any modules not listed are sorted alphabetically after prioritized ones.",
+        "Group internal (aliased @/) imports by their alias root directory and sort them each group and seperated by single space, defined under 'aliased @/ sort priority'",
+        "Combine type and non-type imports from the same module into separate statements only if required by their export structure.",
+        "Declaration-style dynamic imports (e.g., `const foo = import('bar')...`) must appear after all static import statements.",
+        "Place relative imports (e.g., './', '../') last and sort them alphabetically by path.",
+        "Split 'import type' and regular 'import' statements according to exported members in the source.",
+        "'import type' must come before 'import' for the same source file. and if they are in the same path, the 'import type' would be on top if the 'import' of the same directory file",
+        "Within each import statement, sort imported members inside { } alphabetically and remove any unnecessary commas.",
+        "Treat scoped external packages (e.g., '@foo/bar') as external imports."
       ],
-      "sort priority": [
+      "dependency sort priority": [
         "express",
         "mongoose",
         "class-transformer",
         "class-validator"
+      ],
+      "aliased @/ sort priority": [
+        "@/model",
+        "@/router",
+        "@/service",
+        "@/util"
       ]
     }
   ]
