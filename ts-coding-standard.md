@@ -1,0 +1,1 @@
+# 🧾 TypeScript Coding Standards
