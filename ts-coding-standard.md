@@ -1,4 +1,4 @@
-# 🧾 TypeScript Coding Standards
+# TypeScript Coding Standards
 
 ## Table of Contents
 
@@ -17,3 +17,9 @@
    - [Clean Code Tips](#clean-code-tips)
    - [Linting and Formatting](#linting-and-formatting)
 5. [References](#references)
+
+## Introduction
+
+This document provides a focused and practical set of coding standards shared across several core repositories within the project.
+It covers key areas like **project structure**, **naming conventions**, and **API service patterns**,  
+ensuring your TypeScript codebase remains **clean**, **consistent**, and **easy to scale** as your application grows.
