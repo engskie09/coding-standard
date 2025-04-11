@@ -20,10 +20,10 @@
 
 ## Introduction
 
-This document provides a focused and practical set of coding standards shared across several core repositories in the project:
+This guide focuses on a practical set of coding standards shared across several core repositories:
 
 - `ts-node-express-mongoose`: Backend API server built with Node.js, Express, and Mongoose (MongoDB)
 - `ts-node-react-vite-material`: Frontend web application built with React, Vite, and Material UI
 
-It outlines best practices in **project structure**, **naming conventions**, and **service layer design** for both backend and frontend implementations,  
+It outlines best practices in **project structure**, **naming conventions**, and **service layer design** for both backend and frontend,  
 ensuring that each codebase remains **clean**, **consistent**, and **scalable** as the project evolves.
