@@ -20,6 +20,10 @@
 
 ## Introduction
 
-This document provides a focused and practical set of coding standards shared across several core repositories within the project.
-It covers key areas like **project structure**, **naming conventions**, and **API service patterns**,  
-ensuring your TypeScript codebase remains **clean**, **consistent**, and **easy to scale** as your application grows.
+This document provides a focused and practical set of coding standards shared across several core repositories in the project:
+
+- `ts-node-express-mongoose`: Backend API server built with Node.js, Express, and Mongoose (MongoDB)
+- `ts-node-react-vite-material`: Frontend web application built with React, Vite, and Material UI
+
+It outlines best practices in **project structure**, **naming conventions**, and **service layer design** for both backend and frontend implementations,  
+ensuring that each codebase remains **clean**, **consistent**, and **scalable** as the project evolves.
