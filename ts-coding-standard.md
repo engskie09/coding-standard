@@ -29,3 +29,24 @@ It outlines best practices in **project structure**, **naming conventions**, and
 ensuring that each codebase remains **clean**, **consistent**, and **scalable** as the project evolves.
 
 ## Repositories
+
+### ts-node-express-mongoose
+
+#### ts-node-express-mongoose: Project Structure
+
+The project should be organized by domain or feature-based folders. Each feature should contain its own models, services, routers, and utilities.
+
+Example layout:
+
+```bash
+src/
+├── model/
+│   └── sample.model.ts
+├── router/
+│   └── sample.router.ts
+├── service/
+│   └── sample.service.ts
+├── util/
+│   └── util.ts
+└── index.ts
+```
