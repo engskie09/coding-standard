@@ -47,6 +47,38 @@ src/
 ├── service/
 │   └── sample.service.ts
 ├── util/
-│   └── util.ts
+│   └── sample.util.ts
 └── index.ts
 ```
+
+#### ts-node-express-mongoose: Naming Conventions
+
+- Files should be named using `kebab-case`, and use consistent suffixes to indicate their role.
+- Use `*.dto.ts` for Data Transfer Objects, `*.router.ts` for route definitions, and `*.service.ts` for business logic.
+
+Examples:
+
+- `user.dto.ts` should define interfaces or types like:
+```ts
+interface IFetchAccountsRequest {
+  page: number;
+  size: number;
+}
+```
+
+- `user.router.ts` should register routes clearly:
+```ts
+router.get('/fetch-accounts/:page/:size', fetchAccounts);
+```
+
+- `user.service.ts` should contain the actual implementation logic:
+```ts
+const fetchAccounts = () => {};
+```
+
+**Summary of Naming Conventions:**
+| File Type         | Naming Pattern      | Purpose                          |
+|------------------|---------------------|----------------------------------|
+| DTO files         | `user.dto.ts`       | Data structure definitions       |
+| Router files      | `user.router.ts`    | Route setup and controller glue |
+| Service files     | `user.service.ts`   | Business logic implementation   |
