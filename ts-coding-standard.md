@@ -5,9 +5,9 @@
 1. [Introduction](#introduction)
 2. [Repositories](#repositories)
    - [ts-node-express-mongoose](#ts-node-express-mongoose)
-     - [Project Structure](#project-structure-ts-node-express-mongoose)
-     - [Naming Conventions](#naming-conventions-ts-node-express-mongoose)
-     - [API Service Design](#api-service-design-ts-node-express-mongoose)
+     - [ts-node-express-mongoose: Project Structure](#ts-node-express-mongoose-project-structure)
+     - [ts-node-express-mongoose: Naming Conventions](#ts-node-express-mongoose-naming-conventions)
+     - [ts-node-express-mongoose: API Service Design](#ts-node-express-mongoose-api-service-design)
    - [ts-node-react-vite-material](#ts-node-react-vite-material)
      - [Project Structure](#project-structure-ts-node-react-vite-material)
      - [Naming Conventions](#naming-conventions-ts-node-react-vite-material)
@@ -29,31 +29,3 @@ It outlines best practices in **project structure**, **naming conventions**, and
 ensuring that each codebase remains **clean**, **consistent**, and **scalable** as the project evolves.
 
 ## Repositories
-
-<details id="ts-node-express-mongoose">
-<summary><strong>ts-node-express-mongoose</strong></summary>
-
-### Project Structure {#project-structure-ts-node-express-mongoose}
-_TODO: Add structure guidelines_
-
-### Naming Conventions {#naming-conventions-ts-node-express-mongoose}
-_TODO: Add naming rules_
-
-### API Service Design {#api-service-design-ts-node-express-mongoose}
-_TODO: Add API design patterns for Express_
-
-</details>
-
-<details id="ts-node-react-vite-material">
-<summary><strong>ts-node-react-vite-material</strong></summary>
-
-### Project Structure {#project-structure-ts-node-react-vite-material}
-_TODO: Add structure guidelines_
-
-### Naming Conventions {#naming-conventions-ts-node-react-vite-material}
-_TODO: Add naming rules_
-
-### Component Organization {#component-organization-ts-node-react-vite-material}
-_TODO: Add component organization patterns and best practices_
-
-</details>
