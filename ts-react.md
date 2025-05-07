@@ -11,9 +11,6 @@ const Form: React.FC<FormProps> = (props) => {
   // 🟢 hook style here
   const styles = useStyles({ isSample: true });
 
-  // 🟡 hooks inside of the File, but there would be an instance that it will put on other line, (e.g. mandatory parameters from or for other hooks)
-  const { useClick } = useButton();
-
   // 🟢 hooks from external dependencies
   const navigate = useNavigate();
   const matches = useMatches();
@@ -23,6 +20,9 @@ const Form: React.FC<FormProps> = (props) => {
   // but the util/store should be here always, on top of rules below.
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.globalCommon);
+
+  // 🟡 hooks inside of the File, but there would be an instance that it will put on other line, (e.g. mandatory parameters from or for other hooks)
+  const { useClick } = useButton();
 
   // 🟡 hooks outside of the file but same directory: hook.ts
   const { form, handleOnSave } = useForm();
