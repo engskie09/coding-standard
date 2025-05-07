@@ -1,42 +1,61 @@
+```tsx
 // form.tsx
-const Form = (props) => {
-    const { prop } = props;
+import { useEffect, useState } from 'react';
+import { useNavigate, useMatches } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from 'util/store';
+import { useForm } from './useForm';
+import { useFormMisc } from './useFormMisc';
+import { useButton } from './useButton';
+import { useStyles } from './useStyles';
+import { theme } from 'theme'; // assuming theme import
 
-    // hook style here
-    const styles = useStyles({ isSample });
+interface FormProps {
+  prop: any;
+}
 
-    // hooks inside of the File
-    const { useClick } = useButton();
+const Form: React.FC<FormProps> = (props) => {
+  const { prop } = props;
 
-    // hooks from external dependencies
-    const navigate = useNavigate();
-    const matches = useMatches();
+  // hook style here
+  const styles = useStyles({ isSample: true }); // replace true with actual logic
 
-    // hooks from util: util/config util/helper util/store
-    // it can be put in any lines just below of the upper rules. it could be on top or below of states or Effect
-    // but the util/store should be here always, on top of rules below.
-    const dispatch = useAppDispatch();
-    const { user } = useAppSelector((state) => state.globalCommon);
+  // hooks inside of the File
+  const { useClick } = useButton();
 
-    // hooks outside of the file but same directory
-    const { form, handleOnSave } = useForm();
+  // hooks from external dependencies
+  const navigate = useNavigate();
+  const matches = useMatches();
 
-    // hooks outside of the File but same directory (with the consideration if nested directories)
-    const { helper } = useFormMisc();
+  // hooks from util: util/config util/helper util/store
+  // it can be put in any lines just below of the upper rules. it could be on top or below of states or Effect
+  // but the util/store should be here always, on top of rules below.
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.globalCommon);
 
-    // hooks from util: @/util/helper/api
-    // it can be put in any lines just below of the upper rules. it could be on top or below of states or Effect
+  // hooks outside of the file but same directory
+  const { form, handleOnSave } = useForm();
 
-    // useState()
-    const [mode, setMode] = useState(theme.palette.mode);
+  // hooks outside of the File but same directory (with the consideration if nested directories)
+  const { helper } = useFormMisc();
 
-    // useEffect()
-     useEffect(() => {
-        setMode(theme.palette.mode);
-    }, [theme.palette.mode]);
+  // hooks from util: @/util/helper/api
+  // it can be put in any lines just below of the upper rules. it could be on top or below of states or Effect
 
-    // event handlers
-    const handleOnClick = (): void => { };
+  // useState()
+  const [mode, setMode] = useState(theme.palette.mode);
 
-    return <div/>;
+  // useEffect()
+  useEffect(() => {
+    setMode(theme.palette.mode);
+  }, [theme.palette.mode]);
+
+  // event handlers
+  const handleOnClick = (): void => {
+    // your logic here
+  };
+
+  return <div />;
 };
+
+export default Form;
+```
