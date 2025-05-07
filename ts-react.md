@@ -22,6 +22,9 @@ const Form = (props) => {
     const dispatch = useAppDispatch();
     const { user } = useAppSelector((state) => state.globalCommon);
 
+    // hooks from util: @/util/helper/api
+    // it can be put in any lines just below of the upper rules. it could be on top or below of states or Effect
+
     // useState()
     const [mode, setMode] = useState(theme.palette.mode);
 
