@@ -12,15 +12,17 @@ const Form = (props) => {
     const navigate = useNavigate();
     const matches = useMatches();
 
+    // hooks from util: util/config util/helper util/store
+    // it can be put in any lines just below of the upper rules. it could be on top or below of states or Effect
+    // but the util/store should be here always, on top of rules below.
+    const dispatch = useAppDispatch();
+    const { user } = useAppSelector((state) => state.globalCommon);
+
     // hooks outside of the file but same directory
     const { form, handleOnSave } = useForm();
 
     // hooks outside of the File but same directory (with the consideration if nested directories)
     const { helper } = useFormMisc();
-
-    // hooks from util: util/config util/helper util/store
-    const dispatch = useAppDispatch();
-    const { user } = useAppSelector((state) => state.globalCommon);
 
     // hooks from util: @/util/helper/api
     // it can be put in any lines just below of the upper rules. it could be on top or below of states or Effect
