@@ -1,55 +1,47 @@
 ```tsx
 // form.tsx
-import { useEffect, useState } from 'react';
-import { useNavigate, useMatches } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from 'util/store';
-import { useForm } from './useForm';
-import { useFormMisc } from './useFormMisc';
-import { useButton } from './useButton';
-import { useStyles } from './useStyles';
-import { theme } from 'theme'; // assuming theme import
 
-interface FormProps {
-  prop: any;
-}
+🟢 - should be.
+🟡 - should be, but there will instance to realigned it (e.g. mandatory parameters from or for other hooks)
+🔴 - should be, but there will instance to realigned it (e.g. mandatory parameters from or for other hooks) or depends on design logic and perspective
 
 const Form: React.FC<FormProps> = (props) => {
   const { prop } = props;
 
-  // hook style here
-  const styles = useStyles({ isSample: true }); // replace true with actual logic
+  // 🟢 hook style here
+  const styles = useStyles({ isSample: true });
 
-  // hooks inside of the File
+  // 🟡 hooks inside of the File, but there would be an instance that it will put on other line, (e.g. mandatory parameters from or for other hooks)
   const { useClick } = useButton();
 
-  // hooks from external dependencies
+  // 🟢 hooks from external dependencies
   const navigate = useNavigate();
   const matches = useMatches();
 
-  // hooks from util: util/config util/helper util/store
-  // it can be put in any lines just below of the upper rules. it could be on top or below of states or Effect
+  // 🔴 hooks from util: util/config util/helper util/store
+  // it can be put in any lines just below of the upper rules. it could be on top or below of states, effects or outside hooks
   // but the util/store should be here always, on top of rules below.
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.globalCommon);
 
-  // hooks outside of the file but same directory
+  // 🟡 hooks outside of the file but same directory: hook.ts
   const { form, handleOnSave } = useForm();
 
-  // hooks outside of the File but same directory (with the consideration if nested directories)
+  // 🟡 hooks outside of the File but same directory (with the consideration if nested directories)
   const { helper } = useFormMisc();
 
-  // hooks from util: @/util/helper/api
-  // it can be put in any lines just below of the upper rules. it could be on top or below of states or Effect
+  // 🔴 hooks from util: @/util/helper/api
+  // it can be put in any lines just below of the upper rules. it could be on top or below of states, effects or outside hooks
 
-  // useState()
+  // 🔴 useState()
   const [mode, setMode] = useState(theme.palette.mode);
 
-  // useEffect()
+  // 🔴 useEffect()
   useEffect(() => {
     setMode(theme.palette.mode);
   }, [theme.palette.mode]);
 
-  // event handlers
+  // 🔴 event handlers
   const handleOnClick = (): void => {
     // your logic here
   };
