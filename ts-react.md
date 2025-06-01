@@ -17,7 +17,7 @@ const Form: React.FC<FormProps> = (props) => {
 
   // 🔴 hooks from util: util/config util/helper util/store
   // it can be put in any lines just below of the upper rules. it could be on top or below of states, effects or outside hooks
-  // but the util/store should be here always, on top of rules below.
+  // but the util/store "useAppDispatch" & "useAppSelector" should be here always, on top of rules below.
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.globalCommon);
 
